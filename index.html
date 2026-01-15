@@ -63,10 +63,15 @@
             
 
             <nav>
-                <a href="#" class="nav-item"><span class="material-symbols-outlined">home</span><p class="nav-text">Home</p></a>
-                <a href="#" class="nav-item"><span class="material-symbols-outlined">chat_paste_go_2</span><p class="nav-text">Chat</p></a>
+                <a href="#" class="nav-item"><span class="material-symbols-outlined">home</span><p class="nav-text">Home</p>
+                    <div class="tooltip"><div class="tooltip-shape"></div><p class="tooltip-text">Home</p></div>
+                </a>
+                <a href="#" class="nav-item"><span class="material-symbols-outlined">chat_paste_go_2</span><p class="nav-text">Chat</p>
+                    <div class="tooltip"><div class="tooltip-shape"></div><p class="tooltip-text">Chat</p></div>
+                </a>
                 <div class="nav-group">
-                    <div class="nav-item active-group"><span class="material-symbols-outlined">folder_open</span><p class="nav-text">All Matters</p> 
+                    <div class="nav-item active-group"><span class="material-symbols-outlined">folder_open</span><p class="nav-text">All Matters</p>
+                        <div class="tooltip"><div class="tooltip-shape"></div><p class="tooltip-text">All Matters</p></div>
                         <div class="nav-item-remove_icon">
                             <svg class="minus-icon" width="9" height="2" viewBox="0 0 9 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M0 1.2V0H8.26667V1.2H0Z" fill="#0D0D0D"/>
@@ -370,6 +375,23 @@
             } else {
                 folderIcon.textContent = 'folder_open';
             }
+        });
+
+        // Sub-item click functionality
+        const subItems = document.querySelectorAll('.sub-item');
+
+        subItems.forEach(item => {
+            item.addEventListener('click', function() {
+                if (this.classList.contains('active')) {
+                    // If already active, remove active class
+                    this.classList.remove('active');
+                } else {
+                    // Remove active from all sub-items
+                    subItems.forEach(si => si.classList.remove('active'));
+                    // Add active to clicked item
+                    this.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
