@@ -89,7 +89,6 @@ body {
     color: #fff;
     padding: 4px;
     border-radius: 8px;
-    font-size: 12px;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
@@ -114,6 +113,7 @@ body {
     position: relative;
     z-index: 2;
     font-weight: 400;
+    font-size: 12px;
 }
 .nav-item span{
     font-size: 20px;
