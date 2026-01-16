@@ -281,6 +281,7 @@ body {
     align-content: center;
     padding: 4px;
     border-radius: 4px;
+    font-size: 20px;
 }
 
 .icon-btn-top:hover {
